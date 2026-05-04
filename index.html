@@ -6,626 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="GREENEST PF Engineering Services Ltd offers electrical, plumbing, tiling, painting, maintenance, gypsum board and fabrication services in Kampala.">
-  <title>GREENEST PF ENGINEERING SERVICES LTD</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <meta name="keywords" content="engineering, electrical, plumbing, construction, Kampala, Uganda">
+  <meta name="author" content="GREENEST PF Engineering Services Ltd">
+  <meta name="theme-color" content="#040606">
+  
+  <title>GREENEST PF | Engineering Excellence in Kampala</title>
+  
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* ===== CSS RESET & BASE STYLES ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      color-scheme: dark;
-      --bg: #040606;
-      --surface: rgba(18, 30, 32, 0.85);
-      --surface-soft: rgba(22, 34, 38, 0.75);
-      --text: #eef5f8;
-      --muted: #99a7ac;
-      --accent: #53ff8e;
-      --accent-strong: #39d870;
-      --border: rgba(83, 255, 142, 0.18);
-      --shadow: 0 28px 70px rgba(0, 0, 0, 0.4);
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 80px;
-    }
-
-    body {
-      background: radial-gradient(circle at top left, rgba(83, 255, 142, 0.16), transparent 25%),
-        radial-gradient(circle at 95% 10%, rgba(70, 255, 165, 0.12), transparent 22%),
-        linear-gradient(180deg, #050606 0%, #060a0c 100%);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      min-height: 100vh;
-    }
-
-    /* ===== TYPOGRAPHY & UTILITIES ===== */
-    .container {
-      width: min(1120px, 100% - 32px);
-      margin: 0 auto;
-    }
-
-    .glass-card {
-      background: rgba(10, 20, 24, 0.82);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(83, 255, 142, 0.12);
-      border-radius: 30px;
-      box-shadow: var(--shadow);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 1.8rem;
-      min-height: 52px;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, rgba(83, 255, 142, 0.95), rgba(32, 250, 175, 0.7));
-      color: #040606;
-      box-shadow: 0 18px 40px rgba(31, 255, 142, 0.25);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 22px 48px rgba(31, 255, 142, 0.32);
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(83, 255, 142, 0.4);
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .btn-outline:hover {
-      background: rgba(83, 255, 142, 0.14);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .eyebrow::before {
-      content: '';
-      width: 34px;
-      height: 1px;
-      background: rgba(83, 255, 142, 0.4);
-    }
-
-    /* ===== FIXED NAVIGATION ===== */
-    .topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      backdrop-filter: blur(16px);
-      background: rgba(6, 9, 12, 0.95);
-      border-bottom: 1px solid rgba(83, 255, 142, 0.14);
-    }
-
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.75rem 0;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .brand-mark {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(83, 255, 142, 0.32), rgba(23, 38, 44, 0.98));
-      color: var(--accent);
-      border: 1px solid rgba(83, 255, 142, 0.22);
-      font-size: 1.4rem;
-      font-weight: 800;
-    }
-
-    /* Navigation Desktop */
-    .nav-links {
-      display: flex;
-      gap: 0.5rem;
-      list-style: none;
-    }
-
-    .nav-links li a {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.6rem 1.2rem;
-      color: var(--muted);
-      text-decoration: none;
-      border-radius: 999px;
-      font-weight: 500;
-      transition: all 0.22s ease;
-    }
-
-    .nav-links li a:hover,
-    .nav-links li a:focus-visible {
-      color: var(--accent);
-      background: rgba(83, 255, 142, 0.08);
-    }
-
-    .nav-links li a.active {
-      color: var(--accent);
-      background: rgba(83, 255, 142, 0.14);
-    }
-
-    /* Mobile Menu Button */
-    .mobile-menu {
-      display: none;
-      width: 44px;
-      height: 44px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.04);
-      cursor: pointer;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .mobile-menu span {
-      width: 20px;
-      height: 2px;
-      background: var(--text);
-      border-radius: 999px;
-      transition: all 0.25s ease;
-    }
-
-    /* ===== HERO SECTION ===== */
-    .hero {
-      min-height: 100vh;
-      padding: 120px 0 4rem;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .hero-copy h1 {
-      font-size: clamp(2.8rem, 5vw, 4.8rem);
-      line-height: 1.1;
-      margin: 0 0 1.5rem 0;
-    }
-
-    .glow {
-      background: linear-gradient(90deg, rgba(83, 255, 142, 0.98), rgba(255, 255, 255, 0.9));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-text {
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .metric-card {
-      padding: 1rem;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .metric-card strong {
-      display: block;
-      font-size: 1.5rem;
-      color: #fff;
-    }
-
-    .metric-card span {
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .hero-panel {
-      padding: 2rem;
-    }
-
-    .panel-head {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-    }
-
-    .panel-list {
-      list-style: none;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .panel-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      color: var(--muted);
-    }
-
-    .panel-list li i {
-      color: var(--accent);
-      width: 24px;
-    }
-
-    /* ===== SECTIONS ===== */
-    .section {
-      padding: 5rem 0;
-    }
-
-    .section-heading {
-      margin-bottom: 3rem;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      margin-top: 1rem;
-    }
-
-    /* About Grid */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .about-highlights {
-      display: grid;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .about-highlights article {
-      padding: 1.2rem;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .about-summary {
-      padding: 2rem;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      padding: 0 2rem 2rem;
-    }
-
-    .about-stats div {
-      padding: 1rem;
-      border-radius: 22px;
-      background: rgba(83, 255, 142, 0.07);
-      text-align: center;
-    }
-
-    .about-stats strong {
-      display: block;
-      font-size: 1.3rem;
-    }
-
-    /* Services Grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .service-card {
-      padding: 2rem;
-      transition: transform 0.25s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .service-card i {
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
-
-    /* Portfolio Grid */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .portfolio-card {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .portfolio-icon {
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 1rem;
-      display: grid;
-      place-items: center;
-      border-radius: 20px;
-      background: rgba(83, 255, 142, 0.14);
-      color: var(--accent);
-      font-size: 1.8rem;
-    }
-
-    /* Why Us Grid */
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .why-card {
-      padding: 2rem;
-    }
-
-    /* Contact Grid */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .contact-card {
-      padding: 2rem;
-    }
-
-    .contact-info-list {
-      display: grid;
-      gap: 1.2rem;
-      margin-top: 2rem;
-    }
-
-    .contact-info-list div {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .contact-info-list i {
-      color: var(--accent);
-      width: 30px;
-    }
-
-    .contact-map iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 400px;
-      border-radius: 30px;
-      border: none;
-    }
-
-    /* Footer */
-    .footer {
-      padding: 3rem 0 2rem;
-      border-top: 1px solid rgba(83, 255, 142, 0.1);
-      margin-top: 2rem;
-    }
-
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .footer-links a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .footer-note {
-      text-align: center;
-      color: rgba(255, 255, 255, 0.55);
-      font-size: 0.85rem;
-    }
-
-    /* WhatsApp Float */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(135deg, #25d366, #128C7E);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 1.8rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      transition: all 0.25s ease;
-      z-index: 99;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-
-    /* Animations */
-    [data-animate] {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .animate-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ===== RESPONSIVE DESIGN ===== */
-    @media (max-width: 768px) {
-      .mobile-menu {
-        display: flex;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: rgba(6, 9, 12, 0.98);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 2rem;
-        gap: 1rem;
-        transition: left 0.3s ease;
-        z-index: 999;
-      }
-
-      .nav-links.active {
-        left: 0;
-      }
-
-      .nav-links li a {
-        font-size: 1.2rem;
-        padding: 0.8rem 1.5rem;
-        width: 100%;
-        text-align: center;
-      }
-
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 100px;
-      }
-
-      .hero-metrics {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
-      }
-
-      .about-stats {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .footer-grid {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-links {
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-metrics {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <!-- Fixed Navigation -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="#home">
-        <span class="brand-mark">G</span>
-        <span class="brand-copy">GREENEST PF</span>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-dot"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="#home" class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">GREENEST PF</span>
+          <span class="logo-sub">Engineering Services Ltd</span>
+        </div>
       </a>
 
-      <button class="mobile-menu" id="mobileMenuBtn" aria-label="Toggle Menu">
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#whyus">Why Us</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -633,298 +67,417 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy" data-animate="slide-up">
-          <span class="eyebrow">Building Excellence, Powering the Future</span>
-          <h1>GREENEST PF <span class="glow">ENGINEERING SERVICES LTD</span></h1>
-          <p class="hero-text">A premium engineering partner for electrical installation, plumbing, tiling, painting,
-            maintenance, gypsum board works, fabrication, and aluminum construction.</p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Book a Consultation</a>
-            <a href="#services" class="btn btn-outline">Explore Services</a>
+    <section id="home" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-particles" id="heroParticles"></div>
+      
+      <div class="container hero-container">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+          <div class="hero-badge">
+            <i class="fas fa-certificate"></i>
+            <span>Trusted Since 2016</span>
           </div>
-          <div class="hero-metrics">
-            <div class="metric-card"><strong>8+</strong><span>Years trusted</span></div>
-            <div class="metric-card"><strong>7</strong><span>Expert disciplines</span></div>
-            <div class="metric-card"><strong>24/7</strong><span>Rapid response</span></div>
+          
+          <h1 class="hero-title">
+            Building Excellence,
+            <span class="gradient-text">Powering the Future</span>
+          </h1>
+          
+          <p class="hero-description">
+            GREENEST PF delivers premium electrical, plumbing, tiling, painting, maintenance, 
+            and fabrication services across Kampala. We combine technical expertise with 
+            uncompromising quality standards.
+          </p>
+          
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">
+              <i class="fas fa-calendar-check"></i>
+              <span>Book Consultation</span>
+            </a>
+            <a href="#services" class="btn btn-outline">
+              <i class="fas fa-arrow-right"></i>
+              <span>Explore Services</span>
+            </a>
+          </div>
+          
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-count="8">0</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="100">0</div>
+              <div class="stat-label">Projects Complete</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="99">0</div>
+              <div class="stat-label">Satisfaction Rate</div>
+            </div>
           </div>
         </div>
-        <aside class="hero-panel glass-card" data-animate="fade-in">
-          <div class="panel-head">
-            <span class="eyebrow" style="--eyebrow-before: none;">Featured services</span>
-            <div class="panel-badge" style="background: rgba(83,255,142,0.12); padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.7rem;">FUTURE-READY</div>
+        
+        <div class="hero-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="hero-card-header">
+            <i class="fas fa-star-of-life"></i>
+            <span>Premium Services</span>
           </div>
-          <ul class="panel-list">
-            <li><i class="fas fa-bolt"></i> Electrical systems & automation</li>
-            <li><i class="fas fa-water"></i> Leak-proof plumbing design</li>
-            <li><i class="fas fa-brush"></i> Precision tiling & painting</li>
-            <li><i class="fas fa-hard-hat"></i> Maintenance & fabrication</li>
+          <ul class="hero-service-list">
+            <li><i class="fas fa-bolt"></i> <span>Electrical Installation</span></li>
+            <li><i class="fas fa-water"></i> <span>Plumbing Systems</span></li>
+            <li><i class="fas fa-brush"></i> <span>Tiling & Painting</span></li>
+            <li><i class="fas fa-hard-hat"></i> <span>Maintenance & Repair</span></li>
+            <li><i class="fas fa-cubes"></i> <span>Gypsum Board Works</span></li>
+            <li><i class="fas fa-industry"></i> <span>Fabrication & Aluminum</span></li>
           </ul>
-          <div class="panel-quote" style="margin-top: 1.5rem; color: #dafbd8;">"Engineered with precision. Delivered with speed."</div>
-        </aside>
+          <div class="hero-card-footer">
+            <i class="fas fa-clock"></i>
+            <span>24/7 Emergency Response Available</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-scroll-indicator">
+        <span>Scroll to explore</span>
+        <i class="fas fa-chevron-down"></i>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
-      <div class="container about-grid">
-        <div class="about-copy" data-animate="slide-up">
-          <span class="eyebrow">About Us</span>
-          <h2>Engineering solutions built for modern projects.</h2>
-          <p>Greenest PF delivers reliable electrical, plumbing, tiling, painting, maintenance and fabrication services across commercial, industrial and residential work.</p>
-          <div class="about-highlights">
-            <article>
-              <strong>✓ Safety-led delivery</strong>
-              <p>We follow industry standards, rigorous site checks and clean, compliant installation practices.</p>
-            </article>
-            <article>
-              <strong>✓ Turnkey coordination</strong>
-              <p>Multi-discipline teams work together to reduce handoffs and accelerate project handover.</p>
-            </article>
-            <article>
-              <strong>✓ Dedicated support</strong>
-              <p>Quick estimates, clear communication and fast follow-up keep clients informed every step of the way.</p>
-            </article>
-          </div>
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <div class="section-badge">Who We Are</div>
+          <h2 class="section-title">Engineering Solutions Built for Modern Projects</h2>
+          <p class="section-subtitle">
+            We combine technical expertise, disciplined execution, and responsive support to keep every project moving forward.
+          </p>
         </div>
-        <div class="glass-card about-card" data-animate="fade-in">
-          <div class="about-summary">
-            <p>From smart electrical systems to polished finishes, Greenest PF brings professionalism and quality to each stage of construction.</p>
+        
+        <div class="about-grid">
+          <div class="about-content" data-aos="fade-right" data-aos-delay="100">
+            <div class="about-feature">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="feature-text">
+                <h3>Safety-Led Delivery</h3>
+                <p>Industry standards, rigorous site checks, and compliant installation practices.</p>
+              </div>
+            </div>
+            
+            <div class="about-feature">
+              <div class="feature-icon">
+                <i class="fas fa-sync-alt"></i>
+              </div>
+              <div class="feature-text">
+                <h3>Turnkey Coordination</h3>
+                <p>Multi-discipline teams working together to reduce handoffs.</p>
+              </div>
+            </div>
+            
+            <div class="about-feature">
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <div class="feature-text">
+                <h3>Dedicated Support</h3>
+                <p>Quick estimates, clear communication, and fast follow-up.</p>
+              </div>
+            </div>
           </div>
-          <div class="about-stats">
-            <div><strong>100+</strong><span>Projects</span></div>
-            <div><strong>14</strong><span>Specialists</span></div>
-            <div><strong>99%</strong><span>Satisfaction</span></div>
+          
+          <div class="about-stats-grid" data-aos="fade-left" data-aos-delay="200">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-users"></i></div>
+              <div class="stat-number" data-count="14">0</div>
+              <div class="stat-label">Expert Engineers</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-building"></i></div>
+              <div class="stat-number" data-count="120">0</div>
+              <div class="stat-label">Projects Delivered</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+              <div class="stat-number" data-count="100">0</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section">
+    <section id="services" class="services">
       <div class="container">
-        <div class="section-heading" data-animate="slide-up">
-          <span class="eyebrow">Services</span>
-          <h2>Complete technical services for every build.</h2>
+        <div class="section-header" data-aos="fade-up">
+          <div class="section-badge">What We Offer</div>
+          <h2 class="section-title">Complete Technical Services for Every Build</h2>
+          <p class="section-subtitle">
+            From electrical systems to finishing touches, we deliver excellence across all disciplines.
+          </p>
         </div>
+        
         <div class="services-grid">
-          <article class="service-card glass-card" data-animate="fade-in">
-            <i class="fas fa-bolt"></i>
+          <div class="service-card" data-aos="flip-left" data-aos-delay="0">
+            <div class="service-icon"><i class="fas fa-bolt"></i></div>
             <h3>Electrical Installation</h3>
-            <p>Smart wiring, lighting, power distribution, controls, backup systems and safety upgrades.</p>
-          </article>
-          <article class="service-card glass-card" data-animate="fade-in">
-            <i class="fas fa-water"></i>
+            <p>Smart wiring, power distribution, controls, backup systems.</p>
+            <div class="service-hover-bg"></div>
+          </div>
+          
+          <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+            <div class="service-icon"><i class="fas fa-water"></i></div>
             <h3>Plumbing</h3>
-            <p>Water systems, drainage, fixtures and pressure control with leak-proof accuracy.</p>
-          </article>
-          <article class="service-card glass-card" data-animate="fade-in">
-            <i class="fas fa-th-large"></i>
+            <p>Water systems, drainage, fixtures, leak-proof accuracy.</p>
+            <div class="service-hover-bg"></div>
+          </div>
+          
+          <div class="service-card" data-aos="flip-left" data-aos-delay="200">
+            <div class="service-icon"><i class="fas fa-th-large"></i></div>
             <h3>Tiling</h3>
-            <p>Clean tile installations for floors and walls with expert finishes.</p>
-          </article>
-          <article class="service-card glass-card" data-animate="fade-in">
-            <i class="fas fa-paint-roller"></i>
+            <p>Clean tile installations for floors and walls with precision.</p>
+            <div class="service-hover-bg"></div>
+          </div>
+          
+          <div class="service-card" data-aos="flip-left" data-aos-delay="300">
+            <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
             <h3>Painting</h3>
-            <p>Interior and exterior painting that preserves surfaces and elevates spaces.</p>
-          </article>
-          <article class="service-card glass-card" data-animate="fade-in">
-            <i class="fas fa-tools"></i>
+            <p>Interior and exterior painting that elevates spaces.</p>
+            <div class="service-hover-bg"></div>
+          </div>
+          
+          <div class="service-card" data-aos="flip-left" data-aos-delay="400">
+            <div class="service-icon"><i class="fas fa-tools"></i></div>
             <h3>Maintenance</h3>
-            <p>Preventive care, repairs and support designed to keep systems working reliably.</p>
-          </article>
-          <article class="service-card glass-card" data-animate="fade-in">
-            <i class="fas fa-cubes"></i>
+            <p>Preventive care, repairs, and reliable support.</p>
+            <div class="service-hover-bg"></div>
+          </div>
+          
+          <div class="service-card" data-aos="flip-left" data-aos-delay="500">
+            <div class="service-icon"><i class="fas fa-cubes"></i></div>
             <h3>Gypsum Board Works</h3>
-            <p>Precision ceiling and partition installations with a polished final look.</p>
-          </article>
-          <article class="service-card glass-card" data-animate="fade-in">
-            <i class="fas fa-industry"></i>
+            <p>Precision ceiling and partition installations.</p>
+            <div class="service-hover-bg"></div>
+          </div>
+          
+          <div class="service-card" data-aos="flip-left" data-aos-delay="600">
+            <div class="service-icon"><i class="fas fa-industry"></i></div>
             <h3>Fabrication & Aluminum</h3>
-            <p>Metal fabrication, aluminium framing, doors, windows and structural fittings.</p>
-          </article>
+            <p>Metal fabrication, aluminum framing, doors, windows.</p>
+            <div class="service-hover-bg"></div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="section">
+    <section id="portfolio" class="portfolio">
       <div class="container">
-        <div class="section-heading" data-animate="slide-up">
-          <span class="eyebrow">Portfolio</span>
-          <h2>Visible results from our latest project work.</h2>
+        <div class="section-header" data-aos="fade-up">
+          <div class="section-badge">Our Work</div>
+          <h2 class="section-title">Visible Results from Our Latest Projects</h2>
+          <p class="section-subtitle">
+            Browse through some of our recent engineering projects across Kampala.
+          </p>
         </div>
+        
         <div class="portfolio-grid">
-          <article class="portfolio-card glass-card" data-animate="fade-in">
-            <div class="portfolio-icon"><i class="fas fa-lightbulb"></i></div>
-            <h3>Smart electrical fit-out</h3>
-          </article>
-          <article class="portfolio-card glass-card" data-animate="fade-in">
-            <div class="portfolio-icon"><i class="fas fa-water"></i></div>
-            <h3>Sanitary & plumbing upgrade</h3>
-          </article>
-          <article class="portfolio-card glass-card" data-animate="fade-in">
-            <div class="portfolio-icon"><i class="fas fa-th-large"></i></div>
-            <h3>Feature wall tiling</h3>
-          </article>
-          <article class="portfolio-card glass-card" data-animate="fade-in">
-            <div class="portfolio-icon"><i class="fas fa-cog"></i></div>
-            <h3>Fabrication & aluminum framing</h3>
-          </article>
+          <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="0">
+            <div class="portfolio-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h3>Smart Electrical Fit-out</h3>
+              <p>Commercial Building</p>
+            </div>
+            <div class="portfolio-placeholder">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+          </div>
+          
+          <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+            <div class="portfolio-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h3>Sanitary Upgrade</h3>
+              <p>Residential Complex</p>
+            </div>
+            <div class="portfolio-placeholder">
+              <i class="fas fa-water"></i>
+            </div>
+          </div>
+          
+          <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+            <div class="portfolio-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h3>Feature Wall Tiling</h3>
+              <p>Luxury Apartment</p>
+            </div>
+            <div class="portfolio-placeholder">
+              <i class="fas fa-th-large"></i>
+            </div>
+          </div>
+          
+          <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
+            <div class="portfolio-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h3>Aluminum Framing</h3>
+              <p>Office Building</p>
+            </div>
+            <div class="portfolio-placeholder">
+              <i class="fas fa-cog"></i>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Why Us Section -->
-    <section id="whyus" class="section">
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="why-us">
       <div class="container">
-        <div class="section-heading" data-animate="slide-up">
-          <span class="eyebrow">Why Choose Us</span>
-          <h2>Quality, experience, reliability — engineered for your success.</h2>
+        <div class="section-header" data-aos="fade-up">
+          <div class="section-badge">Why Choose Us</div>
+          <h2 class="section-title">Quality, Experience, Reliability — Engineered for Your Success</h2>
         </div>
+        
         <div class="why-grid">
-          <article class="why-card glass-card" data-animate="fade-in">
-            <h3>🎯 Quality craftsmanship</h3>
-            <p>Industry-grade delivery backed by professional standards, rigorous inspections and premium finishes.</p>
-          </article>
-          <article class="why-card glass-card" data-animate="fade-in">
-            <h3>⭐ Proven experience</h3>
-            <p>Years of work across technical installations, maintenance and construction ensure reliable outcomes.</p>
-          </article>
-          <article class="why-card glass-card" data-animate="fade-in">
-            <h3>🔧 Trusted reliability</h3>
-            <p>Clear planning, on-time schedules and responsive support that keeps projects moving forward.</p>
-          </article>
+          <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="why-icon"><i class="fas fa-medal"></i></div>
+            <h3>Quality Craftsmanship</h3>
+            <p>Industry-grade delivery backed by professional standards and premium finishes.</p>
+            <div class="why-number">01</div>
+          </div>
+          
+          <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Proven Experience</h3>
+            <p>Years of expertise across technical installations, maintenance, and construction.</p>
+            <div class="why-number">02</div>
+          </div>
+          
+          <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="why-icon"><i class="fas fa-handshake"></i></div>
+            <h3>Trusted Reliability</h3>
+            <p>Clear planning, on-time schedules, and responsive support you can count on.</p>
+            <div class="why-number">03</div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
-      <div class="container contact-grid">
-        <div class="glass-card contact-card" data-animate="slide-up">
-          <span class="eyebrow">Contact</span>
-          <h2>Reach us for your next engineering project.</h2>
-          <p>Fast responses for quotes, site visits, and technical support.</p>
-          <div class="contact-info-list">
-            <div><i class="fas fa-phone-alt"></i><span>+256 783 756775</span></div>
-            <div><i class="fas fa-phone"></i><span>+256 784 815856</span></div>
-            <div><i class="fab fa-whatsapp"></i><span><a href="https://wa.me/256783756775" target="_blank" style="color: var(--accent);">WhatsApp chat</a></span></div>
-            <div><i class="fas fa-map-marker-alt"></i><span>8th Street Industrial Area, Sali Stage, Wabigalo, Kampala</span></div>
-          </div>
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <div class="section-badge">Get In Touch</div>
+          <h2 class="section-title">Ready to Start Your Project?</h2>
+          <p class="section-subtitle">
+            Contact us for quotes, site visits, and technical support. We're here to help.
+          </p>
         </div>
-        <div class="glass-card contact-map" data-animate="fade-in">
-          <iframe src="https://maps.google.com/maps?q=Kampala+Wabigalo+Industrial+Area&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" title="Greenest PF location"></iframe>
+        
+        <div class="contact-grid">
+          <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+            <div class="contact-card">
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <div>
+                  <h4>Phone</h4>
+                  <a href="tel:+256783756775">+256 783 756775</a><br>
+                  <a href="tel:+256784815856">+256 784 815856</a>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                <div>
+                  <h4>WhatsApp</h4>
+                  <a href="https://wa.me/256783756775" target="_blank">Chat with us →</a>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                  <h4>Visit Us</h4>
+                  <p>8th Street Industrial Area, Sali Stage, Wabigalo, Kampala</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-map" data-aos="fade-left" data-aos-delay="200">
+            <iframe 
+              src="https://maps.google.com/maps?q=Kampala+Wabigalo+Industrial+Area&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              loading="lazy" 
+              title="Greenest PF Location">
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div>
-          <h3 style="margin-bottom: 0.5rem;">GREENEST PF ENGINEERING SERVICES LTD</h3>
-          <p style="color: var(--muted);">Premium technical services with a futuristic, reliable approach.</p>
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-bolt"></i>
+            <span>GREENEST PF</span>
+          </div>
+          <p>Premium engineering services with a commitment to excellence and innovation.</p>
         </div>
+        
         <div class="footer-links">
-          <a href="#services">Services</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#contact">Contact</a>
+          <div>
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#why-us">Why Us</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="footer-note">© 2025 GREENEST PF ENGINEERING SERVICES LTD — All rights reserved</div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 GREENEST PF Engineering Services Ltd. All rights reserved.</p>
+        <p>Built with <i class="fas fa-heart"></i> in Kampala, Uganda</p>
+      </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/256783756775" class="whatsapp-float" target="_blank" rel="noreferrer">
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/256783756775" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat with us</span>
   </a>
 
-  <script>
-    // ===== MOBILE NAVIGATION =====
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navLinksMenu = document.getElementById('navLinks');
-    const navLinksItems = document.querySelectorAll('.nav-links a');
-
-    // Toggle mobile menu
-    function toggleMobileMenu() {
-      navLinksMenu.classList.toggle('active');
-      document.body.style.overflow = navLinksMenu.classList.contains('active') ? 'hidden' : '';
-    }
-
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    }
-
-    // Close menu when clicking on a link
-    navLinksItems.forEach(link => {
-      link.addEventListener('click', () => {
-        if (navLinksMenu.classList.contains('active')) {
-          toggleMobileMenu();
-        }
-      });
-    });
-
-    // ===== ACTIVE NAVIGATION HIGHLIGHT =====
-    function updateActiveNav() {
-      const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.scrollY + 100;
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          navLinksItems.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${sectionId}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }
-
-    window.addEventListener('scroll', updateActiveNav);
-    window.addEventListener('load', updateActiveNav);
-
-    // ===== SCROLL ANIMATIONS =====
-    const animateElements = document.querySelectorAll('[data-animate]');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    animateElements.forEach(el => observer.observe(el));
-
-    // ===== SMOOTH SCROLLING =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const target = document.querySelector(targetId);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // Close mobile menu on window resize (if open and screen becomes larger)
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768 && navLinksMenu.classList.contains('active')) {
-        toggleMobileMenu();
-      }
-    });
-  </script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
