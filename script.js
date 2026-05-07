@@ -38,32 +38,106 @@ window.addEventListener('scroll', updateNavbar);
 updateNavbar();
 
 // ============================================
+// HERO BACKGROUND CAROUSEL (SWIPER)
+// ============================================
+let heroSwiper;
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        heroSwiper = new Swiper('.heroSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.hero-section .swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: '.hero-section .swiper-button-next',
+                prevEl: '.hero-section .swiper-button-prev',
+            },
+        });
+    }, 100);
+});
+
+// ============================================
 // ACTIVE NAVIGATION HIGHLIGHT (SCROLL SPY)
 // ============================================
 function updateActiveNav() {
-    const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    const scrollPosition = window.scrollY + 150;
-
-    let currentSection = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-            currentSection = section.getAttribute('id');
-        }
-    });
+    const currentUrl = window.location.href.split('#')[0];
+    const normalizedCurrent = currentUrl.replace(/index\.html$/, 'index.html');
 
     navLinks.forEach(link => {
         link.classList.remove('active');
-        const href = link.getAttribute('href');
-        if (href && href.substring(1) === currentSection) {
+        const linkUrl = link.href.split('#')[0];
+        if (linkUrl === currentUrl || linkUrl === normalizedCurrent) {
             link.classList.add('active');
         }
     });
 }
+
+// ============================================
+// BOOKING MODAL
+// ============================================
+const bookingModal = document.getElementById('bookingModal');
+const openBookingButtons = document.querySelectorAll('.open-booking');
+const closeBookingButtons = document.querySelectorAll('.close-booking');
+const bookingForm = document.getElementById('bookingForm');
+
+function openBookingModal() {
+    if (!bookingModal) return;
+    bookingModal.classList.add('active');
+    bookingModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeBookingModal() {
+    if (!bookingModal) return;
+    bookingModal.classList.remove('active');
+    bookingModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+openBookingButtons.forEach(button => {
+    button.addEventListener('click', openBookingModal);
+});
+
+closeBookingButtons.forEach(button => {
+    button.addEventListener('click', closeBookingModal);
+});
+
+if (bookingModal) {
+    bookingModal.addEventListener('click', (event) => {
+        if (event.target === bookingModal) {
+            closeBookingModal();
+        }
+    });
+}
+
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const formData = new FormData(bookingForm);
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const service = formData.get('service') || 'General Service';
+        const date = formData.get('date') || 'Not specified';
+        const message = formData.get('message') || 'No additional details provided.';
+
+        const subject = encodeURIComponent('Service Booking Request');
+        const body = encodeURIComponent(
+            'Name: ' + name + '\nEmail: ' + email + '\nService: ' + service + '\nPreferred date: ' + date + '\n\nDetails:\n' + message
+        );
+        window.location.href = 'mailto:raweko@greenestpft.com?subject=' + subject + '&body=' + body;
+        closeBookingModal();
+        bookingForm.reset();
+    });
+};
 
 // ============================================
 // COUNT-UP ANIMATION
@@ -119,6 +193,32 @@ const countObserver = new IntersectionObserver((entries) => {
 // Observe sections with stats
 document.querySelectorAll('.hero-stats, .about-features, .row.g-4').forEach(section => {
     countObserver.observe(section);
+});
+
+// Trigger count-up immediately for hero stats on page load
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const heroStats = document.querySelector('.hero-stats');
+        if (heroStats && !heroStats.classList.contains('counted')) {
+            const countNumbers = heroStats.querySelectorAll('[data-count]');
+            heroStats.classList.add('counted');
+
+            countNumbers.forEach(el => {
+                const targetValue = parseInt(el.getAttribute('data-count'));
+                let current = 0;
+                const increment = Math.ceil(targetValue / 50);
+
+                const interval = setInterval(() => {
+                    if (current < targetValue) {
+                        current = Math.min(current + increment, targetValue);
+                        el.innerText = current;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 20);
+            });
+        }
+    }, 300);
 });
 
 // ============================================
@@ -193,6 +293,8 @@ if (scrollIndicator) {
         const aboutSection = document.querySelector('#about');
         if (aboutSection) {
             aboutSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            window.location.href = 'services.html';
         }
     });
 }
@@ -231,14 +333,6 @@ document.querySelectorAll('a[href="#"]').forEach(link => {
 // ============================================
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
-
-    // Trigger count-up for visible elements on load
-    setTimeout(() => {
-        const visibleStats = document.querySelectorAll('.hero-stats, .stats-card');
-        visibleStats.forEach(stat => {
-            countObserver.observe(stat);
-        });
-    }, 500);
 });
 
 // ============================================
@@ -246,3 +340,38 @@ window.addEventListener('load', () => {
 // ============================================
 console.log('GREENEST PF — Website loaded successfully with Bootstrap 5!');
 console.log('Modern responsive engineering solutions for Kampala');
+
+// ============================================
+// PORTFOLIO SWIPER INITIALIZATION
+// ============================================
+const portfolioSwiper = new Swiper('.portfolioSwiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+    },
+});
