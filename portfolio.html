@@ -3,13 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <meta name="description"
-        content="GREENEST PF Engineering Services Ltd offers electrical, plumbing, tiling, painting, maintenance, gypsum board and fabrication services in Kampala.">
-    <meta name="keywords" content="engineering, electrical, plumbing, construction, Kampala, Uganda">
+        content="Explore GREENEST PF Engineering Services Ltd portfolio - see our completed electrical, plumbing, tiling, painting, and fabrication projects in Kampala, Uganda.">
+    <meta name="keywords" content="engineering portfolio, electrical projects, plumbing installations, construction portfolio, Kampala, Uganda">
     <meta name="author" content="GREENEST PF Engineering Services Ltd">
     <meta name="theme-color" content="#040606">
-    <title>Portfolio | GREENEST PF</title>
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Portfolio | GREENEST PF - Our Engineering Projects in Kampala">
+    <meta property="og:description" content="View our completed electrical, plumbing, tiling, and fabrication projects">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="greenestpf/greenestpf (9).jpeg">
+    
+    <title>Portfolio | GREENEST PF - Our Engineering Projects in Kampala</title>
+    
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link
@@ -18,21 +32,88 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Critical CSS -->
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #53ff8e, #39d870);
+            z-index: 1001;
+            transition: width 0.1s ease;
+        }
+        .pt-7 {
+            padding-top: 7rem;
+        }
+        @media (max-width: 768px) {
+            .pt-7 {
+                padding-top: 5rem;
+            }
+        }
+        .portfolioSwiper {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            aspect-ratio: 16/9;
+        }
+        @media (max-width: 768px) {
+            .portfolioSwiper {
+                max-height: 300px;
+            }
+        }
+        @media (max-width: 576px) {
+            .portfolioSwiper {
+                max-height: 250px;
+            }
+        }
+        .portfolioSwiper .swiper-slide {
+            border-radius: 15px;
+            overflow: hidden;
+            background: var(--bg-card);
+        }
+        .portfolioSwiper .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .portfolioSwiper .swiper-slide:hover img {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .portfolioSwiper .swiper-button-next,
+            .portfolioSwiper .swiper-button-prev {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="scroll-progress"></div>
 
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <br>
+            <a class="navbar-brand" href="index.html" aria-label="GREENEST PF Home">
                 <div class="logo-wrapper">
-                    <i class="fas fa-bolt"></i>
+                    <i class="fas fa-bolt" aria-hidden="true"></i>
                     <span class="brand-text">GREENEST PF</span>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -40,7 +121,7 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -48,51 +129,206 @@
     </nav>
 
     <main>
+        <!-- Portfolio Hero Section -->
         <section class="section-padding pt-7" id="portfolio">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
                     <div class="section-badge d-inline-flex align-items-center mb-3">
-                        <i class="fas fa-images me-2"></i>
+                        <i class="fas fa-images me-2" aria-hidden="true"></i>
                         <span>Our Work</span>
                     </div>
-                    <h2 class="section-title mb-3">Our Portfolio Gallery</h2>
+                    <h1 class="section-title mb-3">Our Portfolio Gallery</h1>
                     <p class="section-subtitle mx-auto">Explore our past projects and installations showcasing our
-                        expertise in engineering and construction.</p>
+                        expertise in engineering and construction across Kampala, Uganda.</p>
                 </div>
 
-                <div class="portfolio-gallery">
+                <!-- Stats Summary -->
+                <div class="row g-4 mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-md-4 col-6">
+                        <div class="stats-card text-center">
+                            <i class="fas fa-briefcase stats-icon" aria-hidden="true"></i>
+                            <div class="stats-number" data-count="120">0</div>
+                            <div class="stats-label">Projects Completed</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <div class="stats-card text-center">
+                            <i class="fas fa-smile stats-icon" aria-hidden="true"></i>
+                            <div class="stats-number" data-count="99">0</div>
+                            <div class="stats-label">Happy Clients</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <div class="stats-card text-center">
+                            <i class="fas fa-trophy stats-icon" aria-hidden="true"></i>
+                            <div class="stats-number" data-count="15">0</div>
+                            <div class="stats-label">Years Combined Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Categories Filter -->
+                <div class="text-center mb-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <button class="btn btn-sm btn-outline-light active filter-btn" data-filter="all">All Projects</button>
+                        <button class="btn btn-sm btn-outline-light filter-btn" data-filter="electrical">Electrical</button>
+                        <button class="btn btn-sm btn-outline-light filter-btn" data-filter="plumbing">Plumbing</button>
+                        <button class="btn btn-sm btn-outline-light filter-btn" data-filter="tiling">Tiling & Painting</button>
+                        <button class="btn btn-sm btn-outline-light filter-btn" data-filter="fabrication">Fabrication</button>
+                    </div>
+                </div>
+
+                <!-- Portfolio Gallery Grid View (Alternative to Swiper) -->
+                <div class="row g-4 mb-5 portfolio-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-md-4 col-6 portfolio-item" data-category="electrical">
+                        <div class="service-card h-100">
+                            <div class="position-relative overflow-hidden rounded-3">
+                                <img src="greenestpf/greenestpf (9).jpeg" alt="Electrical Installation Project" class="w-100" style="height: 200px; object-fit: cover;">
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <h5>Electrical Installation</h5>
+                                        <p>Commercial Building</p>
+                                        <button class="btn btn-sm btn-primary view-project" data-image="greenestpf/greenestpf (9).jpeg">View Project</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-6 portfolio-item" data-category="plumbing">
+                        <div class="service-card h-100">
+                            <div class="position-relative overflow-hidden rounded-3">
+                                <img src="greenestpf/greenestpf (10).jpeg" alt="Plumbing System Installation" class="w-100" style="height: 200px; object-fit: cover;">
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <h5>Plumbing System</h5>
+                                        <p>Residential Project</p>
+                                        <button class="btn btn-sm btn-primary view-project" data-image="greenestpf/greenestpf (10).jpeg">View Project</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-6 portfolio-item" data-category="tiling">
+                        <div class="service-card h-100">
+                            <div class="position-relative overflow-hidden rounded-3">
+                                <img src="greenestpf/greenestpf (11).jpeg" alt="Tiling and Painting Project" class="w-100" style="height: 200px; object-fit: cover;">
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <h5>Tiling & Painting</h5>
+                                        <p>Luxury Apartment</p>
+                                        <button class="btn btn-sm btn-primary view-project" data-image="greenestpf/greenestpf (11).jpeg">View Project</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Gallery Carousel -->
+                <div class="portfolio-gallery mt-5" data-aos="fade-up" data-aos-delay="250">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="h4 mb-0">Complete Gallery</h3>
+                        <div class="gallery-controls">
+                            <button class="btn btn-sm btn-outline-light me-2" id="prevGalleryBtn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-light" id="nextGalleryBtn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
                     <div class="swiper portfolioSwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (9).jpeg" alt="Portfolio Image 1">
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (9).jpeg" alt="Project 1 - Electrical Installation" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Commercial Electrical Installation</p>
+                                </div>
                             </div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (10).jpeg"
-                                    alt="Portfolio Image 2"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (11).jpeg"
-                                    alt="Portfolio Image 3"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (12).jpeg"
-                                    alt="Portfolio Image 4"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (13).jpeg"
-                                    alt="Portfolio Image 5"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (14).jpeg"
-                                    alt="Portfolio Image 6"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (15).jpeg"
-                                    alt="Portfolio Image 7"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (16).jpeg"
-                                    alt="Portfolio Image 8"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (17).jpeg"
-                                    alt="Portfolio Image 9"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (18).jpeg"
-                                    alt="Portfolio Image 10"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (19).jpeg"
-                                    alt="Portfolio Image 11"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (20).jpeg"
-                                    alt="Portfolio Image 12"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (21).jpeg"
-                                    alt="Portfolio Image 13"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (22).jpeg"
-                                    alt="Portfolio Image 14"></div>
-                            <div class="swiper-slide"><img src="greenestpf/greenestpf (23).jpeg"
-                                    alt="Portfolio Image 15"></div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (10).jpeg" alt="Project 2 - Plumbing System" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Modern Plumbing Installation</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (11).jpeg" alt="Project 3 - Tiling Work" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Premium Tiling Finish</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (12).jpeg" alt="Project 4" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Painting & Finishing</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (13).jpeg" alt="Project 5" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Solar Panel Installation</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (14).jpeg" alt="Project 6" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Electrical Control Panel</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (15).jpeg" alt="Project 7" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Plumbing Installation</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (16).jpeg" alt="Project 8" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Gypsum Board Ceiling</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (17).jpeg" alt="Project 9" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Fabrication Work</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (18).jpeg" alt="Project 10" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Electrical Wiring</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (19).jpeg" alt="Project 11" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Aluminum Fabrication</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (20).jpeg" alt="Project 12" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Commercial Project</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (21).jpeg" alt="Project 13" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Residential Installation</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (22).jpeg" alt="Project 14" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Maintenance Work</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="greenestpf/greenestpf (23).jpeg" alt="Project 15" loading="lazy">
+                                <div class="slide-caption">
+                                    <p>Complete Building Finish</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-pagination"></div>
                         <div class="swiper-button-next"></div>
@@ -100,28 +336,76 @@
                     </div>
                 </div>
 
+                <!-- Testimonial Section -->
+                <div class="mt-5" data-aos="fade-up">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--primary);"></i>
+                        <h3 class="mt-2">What Our Clients Say</h3>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="service-card text-center h-100">
+                                <i class="fas fa-star" style="color: gold; margin-bottom: 1rem;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <p class="mt-3">"Professional team, excellent workmanship. They completed our electrical installation on time and within budget."</p>
+                                <h5 class="mt-2">- John Mukasa</h5>
+                                <small class="text-secondary">Homeowner</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="service-card text-center h-100">
+                                <i class="fas fa-star" style="color: gold; margin-bottom: 1rem;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <p class="mt-3">"GREENEST PF transformed our office space with modern electrical systems and beautiful finishes."</p>
+                                <h5 class="mt-2">- Sarah Nabatanzi</h5>
+                                <small class="text-secondary">Business Owner</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="service-card text-center h-100">
+                                <i class="fas fa-star" style="color: gold; margin-bottom: 1rem;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <i class="fas fa-star" style="color: gold;"></i>
+                                <p class="mt-3">"Quick response to our emergency plumbing issue. Very reliable and fairly priced."</p>
+                                <h5 class="mt-2">- Robert Ssemakula</h5>
+                                <small class="text-secondary">Property Manager</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="text-center mt-5" data-aos="fade-up">
-                    <button type="button" class="btn btn-primary btn-lg open-booking"><i
-                            class="fas fa-calendar-check me-2"></i>Book a Consultation</button>
+                    <button type="button" class="btn btn-primary btn-lg open-booking">
+                        <i class="fas fa-calendar-check me-2" aria-hidden="true"></i>Book a Consultation
+                    </button>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <div class="footer-brand"><i class="fas fa-bolt"></i><span>GREENEST PF</span></div>
-                    <p class="mt-3">Premium engineering services with a commitment to excellence and innovation.</p>
+                <div class="col-lg-5 col-md-12">
+                    <div class="footer-brand"><i class="fas fa-bolt" aria-hidden="true"></i><span>GREENEST PF</span></div>
+                    <p class="mt-3">Premium engineering services with a commitment to excellence and innovation in Kampala, Uganda.</p>
                     <div class="social-links mt-4">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-4 col-6">
                     <h4>Quick Links</h4>
                     <ul class="footer-links list-unstyled">
                         <li><a href="index.html">Home</a></li>
@@ -130,7 +414,7 @@
                         <li><a href="portfolio.html">Portfolio</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-4 col-6">
                     <h4>Support</h4>
                     <ul class="footer-links list-unstyled">
                         <li><a href="contact.html">Contact</a></li>
@@ -139,48 +423,66 @@
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 col-md-4">
                     <h4>Working Hours</h4>
                     <ul class="footer-links list-unstyled">
-                        <li><i class="far fa-clock me-2"></i> Mon-Fri: 8:00 - 18:00</li>
-                        <li><i class="far fa-clock me-2"></i> Saturday: 9:00 - 15:00</li>
-                        <li><i class="fas fa-phone-alt me-2"></i> Emergency: 24/7</li>
+                        <li><i class="far fa-clock me-2" aria-hidden="true"></i> Mon-Fri: 8:00 - 18:00</li>
+                        <li><i class="far fa-clock me-2" aria-hidden="true"></i> Saturday: 9:00 - 15:00</li>
+                        <li><i class="fas fa-phone-alt me-2" aria-hidden="true"></i> Emergency: 24/7</li>
                     </ul>
+                    <div class="mt-3">
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i> Kampala, Uganda</p>
+                        <p><i class="fas fa-envelope me-2"></i> raweko@greenestpft.com</p>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom text-center mt-5 pt-4">
                 <p>&copy; 2026 GREENEST PF Engineering Services Ltd. All rights reserved.</p>
-                <p class="mt-2">Built with by <a href="https://kndjoshua.github.io/KnD/">KnDjoshua</a> in Kampala,
-                    Uganda</p>
+                <p class="mt-2">Built with <i class="fas fa-heart text-danger"></i> by <a href="https://kndjoshua.github.io/KnD/" target="_blank" rel="noopener noreferrer">KnDjoshua</a> in Kampala, Uganda</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/256783756775" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/256783756775" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
         <span class="whatsapp-tooltip">Chat with us</span>
     </a>
 
-    <div class="booking-modal" id="bookingModal" aria-hidden="true">
+    <!-- Lightbox Modal for Project View -->
+    <div class="lightbox-modal" id="lightboxModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; align-items: center; justify-content: center;">
+        <button class="close-lightbox" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 2rem; cursor: pointer;">&times;</button>
+        <img id="lightboxImage" src="" alt="Project Image" style="max-width: 90%; max-height: 90%; object-fit: contain;">
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
         <div class="booking-modal-content">
-            <button type="button" class="modal-close close-booking"><i class="fas fa-times"></i></button>
+            <button type="button" class="modal-close close-booking" aria-label="Close modal">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
             <div class="modal-header">
-                <h3>Book a Consultation</h3>
+                <h3 id="modalTitle">Book a Consultation</h3>
                 <p>Send your booking request directly to raweko@greenestpft.com</p>
             </div>
             <form id="bookingForm" class="booking-form">
                 <div class="row g-3">
-                    <div class="col-md-6">
-                        <label for="bookingName" class="form-label">Full Name</label>
+                    <div class="col-md-6 col-12">
+                        <label for="bookingName" class="form-label">Full Name *</label>
                         <input type="text" id="bookingName" name="name" class="form-control" required>
                     </div>
-                    <div class="col-md-6">
-                        <label for="bookingEmail" class="form-label">Email Address</label>
+                    <div class="col-md-6 col-12">
+                        <label for="bookingEmail" class="form-label">Email Address *</label>
                         <input type="email" id="bookingEmail" name="email" class="form-control" required>
                     </div>
-                    <div class="col-md-6">
-                        <label for="bookingService" class="form-label">Service Needed</label>
+                    <div class="col-md-6 col-12">
+                        <label for="bookingPhone" class="form-label">Phone Number</label>
+                        <input type="tel" id="bookingPhone" name="phone" class="form-control">
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <label for="bookingService" class="form-label">Service Needed *</label>
                         <select id="bookingService" name="service" class="form-select" required>
+                            <option value="">Select a service</option>
                             <option value="Electrical Installation">Electrical Installation</option>
                             <option value="Solar & Efficiency Upgrade">Solar & Efficiency Upgrade</option>
                             <option value="Plumbing">Plumbing</option>
@@ -190,14 +492,14 @@
                             <option value="Fabrication & Aluminum">Fabrication & Aluminum</option>
                         </select>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-12">
                         <label for="bookingDate" class="form-label">Preferred Date</label>
                         <input type="date" id="bookingDate" name="date" class="form-control">
                     </div>
                     <div class="col-12">
                         <label for="bookingMessage" class="form-label">Project Details</label>
                         <textarea id="bookingMessage" name="message" class="form-control" rows="4"
-                            placeholder="Tell us briefly what you need"></textarea>
+                            placeholder="Tell us briefly about your project requirements"></textarea>
                     </div>
                 </div>
                 <div class="text-end mt-4">
@@ -207,10 +509,82 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
+    
+    <!-- Portfolio specific scripts -->
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+            document.body.classList.add('loaded');
+            
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImage');
+            const viewButtons = document.querySelectorAll('.view-project');
+            const closeLightbox = document.querySelector('.close-lightbox');
+            
+            viewButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const imgSrc = this.getAttribute('data-image');
+                    if (lightbox && lightboxImg && imgSrc) {
+                        lightboxImg.src = imgSrc;
+                        lightbox.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            if (closeLightbox) {
+                closeLightbox.addEventListener('click', function() {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = '';
+                });
+            }
+            
+            if (lightbox) {
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox) {
+                        lightbox.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+            
+            // Filter functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
