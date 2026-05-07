@@ -6,17 +6,17 @@
   --primary-dark: #39d870;
   --primary-rgb: 83, 255, 142;
   --primary-glow: rgba(83, 255, 142, 0.3);
-  
+
   --bg-dark: #040606;
   --bg-darker: #020304;
   --bg-card: rgba(10, 20, 24, 0.95);
-  
+
   --text-primary: #eef5f8;
   --text-secondary: #99a7ac;
   --text-muted: #6b7b80;
-  
+
   --border-light: rgba(83, 255, 142, 0.15);
-  
+
   --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -166,9 +166,12 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     text-shadow: 0 0 0px var(--primary-glow);
   }
+
   50% {
     text-shadow: 0 0 10px var(--primary-glow);
   }
@@ -220,13 +223,73 @@ body {
   padding: 100px 0 60px;
 }
 
+/* Hero Background Carousel */
+.hero-section .heroSwiper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-section .swiper-slide {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-section .swiper-pagination {
+  bottom: 30px !important;
+  z-index: 10;
+}
+
+.hero-section .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+.hero-section .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
+
+.hero-section .swiper-button-next,
+.hero-section .swiper-button-prev {
+  color: var(--primary);
+  width: 50px;
+  height: 50px;
+  background: rgba(83, 255, 142, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: var(--transition-base);
+  backdrop-filter: blur(10px);
+}
+
+.hero-section .swiper-button-next:hover,
+.hero-section .swiper-button-prev:hover {
+  background: rgba(83, 255, 142, 0.2);
+}
+
+.hero-section .swiper-button-next::after,
+.hero-section .swiper-button-prev::after {
+  font-size: 20px;
+}
+
+
+
+
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: 
+  background:
+    rgba(0, 0, 0, 0.4),
     radial-gradient(circle at 20% 50%, rgba(83, 255, 142, 0.08), transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(83, 255, 142, 0.05), transparent 50%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero-badge {
@@ -355,9 +418,12 @@ body {
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
+
   50% {
     transform: translateX(-50%) translateY(10px);
   }
@@ -455,9 +521,16 @@ body {
 }
 
 .service-icon {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: var(--primary);
   margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-base);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  color: var(--primary-hover);
 }
 
 .service-card h3 {
@@ -484,65 +557,42 @@ body {
 }
 
 /* ============================================
-   PORTFOLIO SECTION
+   PORTFOLIO GALLERY
    ============================================ */
-.portfolio-card {
-  position: relative;
+.portfolio-gallery {
+  margin-top: 2rem;
+}
+
+.portfolioSwiper {
+  width: 100%;
+  height: 400px;
+}
+
+.portfolioSwiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 15px;
   overflow: hidden;
-  cursor: pointer;
-  aspect-ratio: 1;
 }
 
-.portfolio-image {
+.portfolioSwiper .swiper-slide img {
+  display: block;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(var(--primary-rgb), 0.05));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
+  object-fit: cover;
+}
+
+.portfolioSwiper .swiper-pagination {
+  bottom: 10px;
+}
+
+.portfolioSwiper .swiper-button-next,
+.portfolioSwiper .swiper-button-prev {
   color: var(--primary);
-  transition: var(--transition-base);
-}
-
-.portfolio-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(4, 6, 6, 0.95);
-  backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  opacity: 0;
-  transition: var(--transition-base);
-  padding: 1.5rem;
-}
-
-.portfolio-card:hover .portfolio-overlay {
-  opacity: 1;
-}
-
-.portfolio-card:hover .portfolio-image {
-  transform: scale(1.1);
-}
-
-.portfolio-overlay h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.portfolio-overlay p {
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-}
-
-.view-more {
-  color: var(--primary);
-  font-size: 0.85rem;
-  font-weight: 500;
 }
 
 /* ============================================
@@ -765,6 +815,92 @@ body {
 }
 
 /* ============================================
+   BOOKING MODAL
+   ============================================ */
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1100;
+}
+
+.booking-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.booking-modal-content {
+  width: min(680px, 100%);
+  background: rgba(9, 16, 21, 0.98);
+  border: 1px solid rgba(var(--primary-rgb), 0.18);
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  padding: 2.5rem;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.modal-header h3 {
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  margin-bottom: 0.5rem;
+}
+
+.modal-header p {
+  color: var(--text-secondary);
+  margin-bottom: 1.8rem;
+}
+
+.booking-form .form-label {
+  color: var(--text-secondary);
+}
+
+.booking-form .form-control,
+.booking-form .form-select,
+.booking-form textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.booking-form .form-control:focus,
+.booking-form .form-select:focus,
+.booking-form textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.12);
+}
+
+.booking-form textarea {
+  resize: vertical;
+}
+
+/* ============================================
    RESPONSIVE FIXES
    ============================================ */
 @media (max-width: 991px) {
@@ -775,11 +911,11 @@ body {
     border-radius: 15px;
     margin-top: 1rem;
   }
-  
+
   .navbar-nav {
     gap: 0;
   }
-  
+
   .nav-link {
     text-align: center;
     padding: 0.8rem !important;
@@ -790,44 +926,44 @@ body {
   .hero-section {
     padding: 80px 0 40px;
   }
-  
+
   .hero-buttons {
     flex-direction: column;
   }
-  
+
   .hero-buttons .btn {
     width: 100%;
   }
-  
+
   .hero-stats {
     margin-top: 1rem;
   }
-  
+
   .about-feature {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .feature-icon {
     margin: 0 auto;
   }
-  
+
   .stats-card {
     margin-bottom: 1rem;
   }
-  
+
   .contact-map {
     min-height: 300px;
   }
-  
+
   .footer {
     text-align: center;
   }
-  
+
   .social-links {
     justify-content: center;
   }
-  
+
   .whatsapp-float {
     bottom: 20px;
     right: 20px;
@@ -841,23 +977,23 @@ body {
   .section-padding {
     padding: 40px 0;
   }
-  
+
   .hero-stats .col-4 {
     padding: 0 0.5rem;
   }
-  
+
   .stat-number {
     font-size: 1.5rem;
   }
-  
+
   .stat-label {
     font-size: 0.7rem;
   }
-  
+
   .hero-card {
     padding: 1.5rem;
   }
-  
+
   .service-card {
     padding: 1.5rem;
   }
@@ -871,6 +1007,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
