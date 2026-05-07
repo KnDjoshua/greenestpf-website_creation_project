@@ -9,24 +9,26 @@
   <meta name="keywords" content="engineering, electrical, plumbing, construction, Kampala, Uganda">
   <meta name="author" content="GREENEST PF Engineering Services Ltd">
   <meta name="theme-color" content="#040606">
-  
+
   <title>GREENEST PF | Engineering Excellence in Kampala</title>
-  
+
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+
   <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
+
   <!-- Swiper JS for carousels -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -38,36 +40,34 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="#home">
+      <a class="navbar-brand" href="index.html">
         <div class="logo-wrapper">
           <i class="fas fa-bolt"></i>
           <span class="brand-text">GREENEST PF</span>
         </div>
       </a>
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#services">Services</a>
+            <a class="nav-link" href="services.html">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#portfolio">Portfolio</a>
+            <a class="nav-link" href="portfolio.html">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#why-us">Why Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
+            <a class="nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
       </div>
@@ -77,41 +77,53 @@
   <main>
     <!-- Hero Section -->
     <section id="home" class="hero-section">
+      <!-- Hero Background Carousel -->
+      <div class="swiper heroSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image: url('greenestpf/hero/greenestpf_work (1).jpg')"></div>
+          <div class="swiper-slide" style="background-image: url('greenestpf/hero/greenestpf_work (2).jpg')"></div>
+          <div class="swiper-slide" style="background-image: url('greenestpf/hero/greenestpf_work (3).jpg')"></div>
+          <div class="swiper-slide" style="background-image: url('greenestpf/hero/greenestpf_work (4).jpg')"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
       <div class="hero-overlay"></div>
       <div class="container position-relative z-1">
         <div class="row min-vh-100 align-items-center">
           <div class="col-lg-7 mb-5 mb-lg-0" data-aos="fade-up" data-aos-duration="1000">
             <div class="hero-badge mb-3">
               <i class="fas fa-certificate me-2"></i>
-              <span>Trusted Since 2016</span>
+              <span>Trusted Since 2022</span>
             </div>
             <h1 class="hero-title mb-4">
               Building Excellence,
               <span class="gradient-text">Powering the Future</span>
             </h1>
             <p class="hero-text mb-4">
-              GREENEST PF delivers premium electrical, plumbing, tiling, painting, maintenance, 
-              and fabrication services across Kampala. We combine technical expertise with 
-              uncompromising quality standards.
+              GREENEST PF delivers premium electrical, plumbing, tiling, painting, maintenance,
+              and fabrication services across Kampala. We blend practical experience with
+              energy-smart, sustainable solutions.
             </p>
             <div class="hero-buttons d-flex flex-wrap gap-3 mb-4">
-              <a href="#contact" class="btn btn-primary btn-lg">
+              <button type="button" class="btn btn-primary btn-lg open-booking">
                 <i class="fas fa-calendar-check me-2"></i>Book Consultation
-              </a>
-              <a href="#services" class="btn btn-outline-light btn-lg">
+              </button>
+              <a href="services.html" class="btn btn-outline-light btn-lg">
                 <i class="fas fa-arrow-right me-2"></i>Explore Services
               </a>
             </div>
             <div class="row g-4 hero-stats">
               <div class="col-4">
                 <div class="stat-card">
-                  <div class="stat-number" data-count="8">0</div>
+                  <div class="stat-number" data-count="4">0</div>
                   <div class="stat-label">Years Experience</div>
                 </div>
               </div>
               <div class="col-4">
                 <div class="stat-card">
-                  <div class="stat-number" data-count="120">0</div>
+                  <div class="stat-number" data-count="20">0</div>
                   <div class="stat-label">Projects Complete</div>
                 </div>
               </div>
@@ -123,7 +135,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <div class="hero-card">
               <div class="hero-card-header">
@@ -131,7 +143,7 @@
                 <span>Premium Services</span>
               </div>
               <ul class="hero-service-list list-unstyled">
-                <li><i class="fas fa-bolt me-3"></i> Electrical Installation</li>
+                <li><i class="fas fa-bolt me-3"></i> Electrical & Solar Systems</li>
                 <li><i class="fas fa-water me-3"></i> Plumbing Systems</li>
                 <li><i class="fas fa-brush me-3"></i> Tiling & Painting</li>
                 <li><i class="fas fa-hard-hat me-3"></i> Maintenance & Repair</li>
@@ -146,83 +158,46 @@
           </div>
         </div>
       </div>
-      
+
       <div class="scroll-indicator">
         <span>Scroll to explore</span>
         <i class="fas fa-chevron-down ms-2"></i>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section-padding">
+    <section class="section-padding bg-gradient">
       <div class="container">
-        <div class="text-center mb-5" data-aos="fade-up">
-          <div class="section-badge d-inline-flex align-items-center mb-3">
-            <i class="fas fa-info-circle me-2"></i>
-            <span>Who We Are</span>
-          </div>
-          <h2 class="section-title mb-3">Engineering Solutions Built for Modern Projects</h2>
-          <p class="section-subtitle mx-auto">
-            We combine technical expertise, disciplined execution, and responsive support to keep every project moving forward.
-          </p>
-        </div>
-        
-        <div class="row g-4 align-items-start">
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-            <div class="about-features">
-              <div class="about-feature mb-4">
-                <div class="feature-icon">
-                  <i class="fas fa-shield-alt"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Safety-Led Delivery</h3>
-                  <p>Industry standards, rigorous site checks, and compliant installation practices.</p>
-                </div>
-              </div>
-              
-              <div class="about-feature mb-4">
-                <div class="feature-icon">
-                  <i class="fas fa-sync-alt"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Turnkey Coordination</h3>
-                  <p>Multi-discipline teams working together to reduce handoffs and accelerate project handover.</p>
-                </div>
-              </div>
-              
-              <div class="about-feature mb-4">
-                <div class="feature-icon">
-                  <i class="fas fa-headset"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Dedicated Support</h3>
-                  <p>Quick estimates, clear communication, and fast follow-up at every stage.</p>
-                </div>
-              </div>
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="section-badge d-inline-flex align-items-center mb-3">
+              <i class="fas fa-leaf me-2"></i>
+              <span>Energy Smart Engineering</span>
             </div>
+            <h2 class="section-title mb-3">Built for efficient electrical work and smart solar-ready systems</h2>
+            <p class="section-subtitle mx-auto">We specialize in reliable electrical installations, practical
+              sustainability upgrades, and energy-saving power solutions for homes and businesses in Kampala.</p>
           </div>
-          
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+          <div class="col-lg-6" data-aos="fade-left">
             <div class="row g-4">
               <div class="col-md-4">
-                <div class="stats-card text-center">
-                  <i class="fas fa-users stats-icon"></i>
-                  <div class="stats-number" data-count="14">0</div>
-                  <div class="stats-label">Expert Engineers</div>
+                <div class="why-card text-center">
+                  <div class="why-icon"><i class="fas fa-solar-panel"></i></div>
+                  <h3>Solar Ready</h3>
+                  <p>Designed to support solar panels and battery-backed systems.</p>
                 </div>
               </div>
               <div class="col-md-4">
-                <div class="stats-card text-center">
-                  <i class="fas fa-building stats-icon"></i>
-                  <div class="stats-number" data-count="120">0</div>
-                  <div class="stats-label">Projects Delivered</div>
+                <div class="why-card text-center">
+                  <div class="why-icon"><i class="fas fa-bolt"></i></div>
+                  <h3>Power Saving</h3>
+                  <p>Load management, efficient wiring, and energy-friendly upgrades.</p>
                 </div>
               </div>
               <div class="col-md-4">
-                <div class="stats-card text-center">
-                  <i class="fas fa-trophy stats-icon"></i>
-                  <div class="stats-number" data-count="100">0</div>
-                  <div class="stats-label">Happy Clients</div>
+                <div class="why-card text-center">
+                  <div class="why-icon"><i class="fas fa-hands-helping"></i></div>
+                  <h3>Trusted Work</h3>
+                  <p>Clear delivery, quality finishes, and responsive support.</p>
                 </div>
               </div>
             </div>
@@ -231,279 +206,13 @@
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section-padding bg-gradient">
+    <section class="section-padding text-center">
       <div class="container">
-        <div class="text-center mb-5" data-aos="fade-up">
-          <div class="section-badge d-inline-flex align-items-center mb-3">
-            <i class="fas fa-cogs me-2"></i>
-            <span>What We Offer</span>
-          </div>
-          <h2 class="section-title mb-3">Complete Technical Services for Every Build</h2>
-          <p class="section-subtitle mx-auto">
-            From electrical systems to finishing touches, we deliver excellence across all disciplines.
-          </p>
-        </div>
-        
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="0">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-bolt"></i>
-              </div>
-              <h3>Electrical Installation</h3>
-              <p>Smart wiring, power distribution, controls, backup systems, and safety upgrades.</p>
-              <div class="service-overlay"></div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="100">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-water"></i>
-              </div>
-              <h3>Plumbing</h3>
-              <p>Water systems, drainage, fixtures, and pressure control with leak-proof accuracy.</p>
-              <div class="service-overlay"></div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="200">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-th-large"></i>
-              </div>
-              <h3>Tiling</h3>
-              <p>Clean tile installations for floors and walls with expert precision finishes.</p>
-              <div class="service-overlay"></div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="300">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-paint-roller"></i>
-              </div>
-              <h3>Painting</h3>
-              <p>Interior and exterior painting that preserves surfaces and elevates spaces.</p>
-              <div class="service-overlay"></div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="400">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-tools"></i>
-              </div>
-              <h3>Maintenance</h3>
-              <p>Preventive care, repairs, and support to keep systems working reliably.</p>
-              <div class="service-overlay"></div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="500">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-cubes"></i>
-              </div>
-              <h3>Gypsum Board Works</h3>
-              <p>Precision ceiling and partition installations with polished final look.</p>
-              <div class="service-overlay"></div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 mx-auto" data-aos="flip-left" data-aos-delay="600">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-industry"></i>
-              </div>
-              <h3>Fabrication & Aluminum</h3>
-              <p>Metal fabrication, aluminum framing, doors, windows, and structural fittings.</p>
-              <div class="service-overlay"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section-padding">
-      <div class="container">
-        <div class="text-center mb-5" data-aos="fade-up">
-          <div class="section-badge d-inline-flex align-items-center mb-3">
-            <i class="fas fa-images me-2"></i>
-            <span>Our Work</span>
-          </div>
-          <h2 class="section-title mb-3">Visible Results from Our Latest Projects</h2>
-          <p class="section-subtitle mx-auto">
-            Browse through some of our recent engineering projects across Kampala.
-          </p>
-        </div>
-        
-        <div class="row g-4">
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="0">
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <i class="fas fa-lightbulb"></i>
-              </div>
-              <div class="portfolio-overlay">
-                <h4>Smart Electrical Fit-out</h4>
-                <p>Commercial Building</p>
-                <span class="view-more">View Project →</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <i class="fas fa-water"></i>
-              </div>
-              <div class="portfolio-overlay">
-                <h4>Sanitary Upgrade</h4>
-                <p>Residential Complex</p>
-                <span class="view-more">View Project →</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <i class="fas fa-th-large"></i>
-              </div>
-              <div class="portfolio-overlay">
-                <h4>Feature Wall Tiling</h4>
-                <p>Luxury Apartment</p>
-                <span class="view-more">View Project →</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <i class="fas fa-cog"></i>
-              </div>
-              <div class="portfolio-overlay">
-                <h4>Aluminum Framing</h4>
-                <p>Office Building</p>
-                <span class="view-more">View Project →</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section id="why-us" class="section-padding bg-gradient">
-      <div class="container">
-        <div class="text-center mb-5" data-aos="fade-up">
-          <div class="section-badge d-inline-flex align-items-center mb-3">
-            <i class="fas fa-question-circle me-2"></i>
-            <span>Why Choose Us</span>
-          </div>
-          <h2 class="section-title mb-3">Quality, Experience, Reliability — Engineered for Your Success</h2>
-        </div>
-        
-        <div class="row g-4">
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
-            <div class="why-card">
-              <div class="why-icon">
-                <i class="fas fa-medal"></i>
-              </div>
-              <h3>Quality Craftsmanship</h3>
-              <p>Industry-grade delivery backed by professional standards and premium finishes.</p>
-              <div class="why-number">01</div>
-            </div>
-          </div>
-          
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="why-card">
-              <div class="why-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <h3>Proven Experience</h3>
-              <p>Years of expertise across technical installations, maintenance, and construction.</p>
-              <div class="why-number">02</div>
-            </div>
-          </div>
-          
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="why-card">
-              <div class="why-icon">
-                <i class="fas fa-handshake"></i>
-              </div>
-              <h3>Trusted Reliability</h3>
-              <p>Clear planning, on-time schedules, and responsive support you can count on.</p>
-              <div class="why-number">03</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding">
-      <div class="container">
-        <div class="text-center mb-5" data-aos="fade-up">
-          <div class="section-badge d-inline-flex align-items-center mb-3">
-            <i class="fas fa-envelope me-2"></i>
-            <span>Get In Touch</span>
-          </div>
-          <h2 class="section-title mb-3">Ready to Start Your Project?</h2>
-          <p class="section-subtitle mx-auto">
-            Contact us for quotes, site visits, and technical support. We're here to help.
-          </p>
-        </div>
-        
-        <div class="row g-4">
-          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
-            <div class="contact-info">
-              <div class="contact-item d-flex align-items-start mb-4">
-                <div class="contact-icon">
-                  <i class="fas fa-phone-alt"></i>
-                </div>
-                <div>
-                  <h4>Phone</h4>
-                  <a href="tel:+256783756775">+256 783 756775</a><br>
-                  <a href="tel:+256784815856">+256 784 815856</a>
-                </div>
-              </div>
-              
-              <div class="contact-item d-flex align-items-start mb-4">
-                <div class="contact-icon">
-                  <i class="fab fa-whatsapp"></i>
-                </div>
-                <div>
-                  <h4>WhatsApp</h4>
-                  <a href="https://wa.me/256783756775" target="_blank">Chat with us →</a>
-                </div>
-              </div>
-              
-              <div class="contact-item d-flex align-items-start mb-4">
-                <div class="contact-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div>
-                  <h4>Visit Us</h4>
-                  <p>8th Street Industrial Area, Sali Stage, Wabigalo, Kampala</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-            <div class="contact-map">
-              <iframe 
-                src="https://maps.google.com/maps?q=Kampala+Wabigalo+Industrial+Area&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                loading="lazy" 
-                title="Greenest PF Location"
-                class="w-100 h-100 rounded-4">
-              </iframe>
-            </div>
-          </div>
+        <h3 class="section-title mb-3">Browse the right page for your next service request</h3>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="about.html" class="btn btn-outline-light btn-lg">About</a>
+          <a href="services.html" class="btn btn-primary btn-lg">Services</a>
+          <button type="button" class="btn btn-secondary btn-lg open-booking">Book Consultation</button>
         </div>
       </div>
     </section>
@@ -526,27 +235,27 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
-        
+
         <div class="col-lg-2">
           <h4>Quick Links</h4>
           <ul class="footer-links list-unstyled">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
           </ul>
         </div>
-        
+
         <div class="col-lg-2">
           <h4>Support</h4>
           <ul class="footer-links list-unstyled">
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">Why Us</a></li>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Terms of Service</a></li>
           </ul>
         </div>
-        
+
         <div class="col-lg-3">
           <h4>Working Hours</h4>
           <ul class="footer-links list-unstyled">
@@ -556,9 +265,9 @@
           </ul>
         </div>
       </div>
-      
+
       <div class="footer-bottom text-center mt-5 pt-4">
-        <p>&copy; 2025 GREENEST PF Engineering Services Ltd. All rights reserved.</p>
+        <p>&copy; 2026 GREENEST PF Engineering Services Ltd. All rights reserved.</p>
         <p class="mt-2">Built with by <a href="https://kndjoshua.github.io/KnD/">KnDjoshua</a> in Kampala, Uganda</p>
       </div>
     </div>
@@ -569,6 +278,52 @@
     <i class="fab fa-whatsapp"></i>
     <span class="whatsapp-tooltip">Chat with us</span>
   </a>
+
+  <div class="booking-modal" id="bookingModal" aria-hidden="true">
+    <div class="booking-modal-content">
+      <button type="button" class="modal-close close-booking"><i class="fas fa-times"></i></button>
+      <div class="modal-header">
+        <h3>Book a Consultation</h3>
+        <p>Send your booking request directly to raweko@greenestpft.com</p>
+      </div>
+      <form id="bookingForm" class="booking-form">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="bookingName" class="form-label">Full Name</label>
+            <input type="text" id="bookingName" name="name" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label for="bookingEmail" class="form-label">Email Address</label>
+            <input type="email" id="bookingEmail" name="email" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label for="bookingService" class="form-label">Service Needed</label>
+            <select id="bookingService" name="service" class="form-select" required>
+              <option value="Electrical Installation">Electrical Installation</option>
+              <option value="Solar & Efficiency Upgrade">Solar & Efficiency Upgrade</option>
+              <option value="Plumbing">Plumbing</option>
+              <option value="Tiling & Painting">Tiling & Painting</option>
+              <option value="Maintenance">Maintenance</option>
+              <option value="Gypsum Board Works">Gypsum Board Works</option>
+              <option value="Fabrication & Aluminum">Fabrication & Aluminum</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="bookingDate" class="form-label">Preferred Date</label>
+            <input type="date" id="bookingDate" name="date" class="form-control">
+          </div>
+          <div class="col-12">
+            <label for="bookingMessage" class="form-label">Project Details</label>
+            <textarea id="bookingMessage" name="message" class="form-control" rows="4"
+              placeholder="Tell us briefly what you need"></textarea>
+          </div>
+        </div>
+        <div class="text-end mt-4">
+          <button type="submit" class="btn btn-primary btn-lg">Send Booking Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
