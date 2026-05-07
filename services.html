@@ -3,13 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <meta name="description"
-        content="GREENEST PF Engineering Services Ltd offers electrical, plumbing, tiling, painting, maintenance, gypsum board and fabrication services in Kampala.">
-    <meta name="keywords" content="engineering, electrical, plumbing, construction, Kampala, Uganda">
+        content="GREENEST PF Engineering Services Ltd offers electrical, plumbing, tiling, painting, maintenance, gypsum board, fabrication, AC, and camera services in Kampala, Uganda.">
+    <meta name="keywords" content="engineering services, electrical installation, plumbing services, tiling, painting, maintenance, fabrication, AC installation, Kampala, Uganda">
     <meta name="author" content="GREENEST PF Engineering Services Ltd">
     <meta name="theme-color" content="#040606">
-    <title>Services | GREENEST PF</title>
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Services | GREENEST PF - Professional Engineering Services in Kampala">
+    <meta property="og:description" content="Complete technical services including electrical, plumbing, solar systems, tiling, painting, and fabrication">
+    <meta property="og:type" content="website">
+    
+    <title>Services | GREENEST PF - Professional Engineering Services in Kampala</title>
+    
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link
@@ -17,29 +30,76 @@
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Critical CSS -->
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #53ff8e, #39d870);
+            z-index: 1001;
+            transition: width 0.1s ease;
+        }
+        .pt-7 {
+            padding-top: 7rem;
+        }
+        @media (max-width: 768px) {
+            .pt-7 {
+                padding-top: 5rem;
+            }
+        }
+        .service-card {
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        .service-icon {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+        }
+        @media (max-width: 768px) {
+            .service-card {
+                padding: 1.5rem;
+            }
+            .service-card h3 {
+                font-size: 1.2rem;
+            }
+            .service-card p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="scroll-progress"></div>
 
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
-            <br>
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.html" aria-label="GREENEST PF Home">
                 <div class="logo-wrapper">
-                    <i class="fas fa-bolt"></i>
+                    <i class="fas fa-bolt" aria-hidden="true"></i>
                     <span class="brand-text">GREENEST PF</span>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
@@ -48,131 +108,306 @@
     </nav>
 
     <main>
+        <!-- Services Hero Section -->
         <section class="section-padding pt-7" id="services">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
                     <div class="section-badge d-inline-flex align-items-center mb-3">
-                        <i class="fas fa-cogs me-2"></i>
+                        <i class="fas fa-cogs me-2" aria-hidden="true"></i>
                         <span>What We Offer</span>
                     </div>
-                    <h2 class="section-title mb-3">Complete Technical Services for Every Build</h2>
+                    <h1 class="section-title mb-3">Complete Technical Services for Every Build</h1>
                     <p class="section-subtitle mx-auto">From electrical systems to finishing touches, we deliver
-                        sustainable installations, power-saving solutions, and premium craftsmanship.</p>
+                        sustainable installations, power-saving solutions, and premium craftsmanship for homes and businesses in Kampala.</p>
                 </div>
 
+                <!-- Service Categories Grid -->
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="0">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                    <!-- Electrical Installation -->
+                    <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="0">
+                        <div class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
                             <h3>Electrical Installation</h3>
-                            <p>Energy-efficient wiring, solar-ready power systems, smart load management, and
-                                safety-first distribution design.</p>
+                            <p>Energy-efficient wiring, solar-ready power systems, smart load management, and safety-first distribution design for residential and commercial properties.</p>
                             <div class="service-overlay"></div>
+                            <div class="mt-3">
+                                <small class="text-primary">
+                                    <i class="fas fa-check-circle me-1"></i> Certified Electricians
+                                    <i class="fas fa-check-circle ms-3 me-1"></i> Safety Compliant
+                                </small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="100">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-solar-panel"></i></div>
+                    
+                    <!-- Solar & Efficiency -->
+                    <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-solar-panel" aria-hidden="true"></i></div>
                             <h3>Solar & Efficiency Upgrades</h3>
-                            <p>Solar panel planning, battery-ready systems, efficient lighting, and practical ways to
-                                save power every day.</p>
+                            <p>Solar panel planning, battery-ready systems, efficient lighting conversions, and practical ways to save power and reduce electricity bills every day.</p>
                             <div class="service-overlay"></div>
+                            <div class="mt-3">
+                                <small class="text-primary">
+                                    <i class="fas fa-leaf me-1"></i> Eco-Friendly
+                                    <i class="fas fa-chart-line ms-3 me-1"></i> Save 40-60%
+                                </small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="200">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-water"></i></div>
+                    
+                    <!-- Plumbing -->
+                    <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-water" aria-hidden="true"></i></div>
                             <h3>Plumbing</h3>
-                            <p>Water systems, drainage, fixtures, and pressure control with dependable, leak-proof
-                                accuracy.</p>
+                            <p>Complete water systems installation, drainage solutions, fixture fitting, and pressure control with dependable, leak-proof accuracy and quality materials.</p>
                             <div class="service-overlay"></div>
+                            <div class="mt-3">
+                                <small class="text-primary">
+                                    <i class="fas fa-tint me-1"></i> Leak-Free Guarantee
+                                    <i class="fas fa-clock ms-3 me-1"></i> 24/7 Emergency
+                                </small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="300">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-th-large"></i></div>
+                    
+                    <!-- Tiling -->
+                    <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-th-large" aria-hidden="true"></i></div>
                             <h3>Tiling</h3>
-                            <p>Precise tile installation for floors and walls with clean lines and polished finishes.
-                            </p>
+                            <p>Precision tile installation for floors and walls with clean lines, professional patterns, and polished finishes that enhance any space's aesthetic.</p>
                             <div class="service-overlay"></div>
+                            <div class="mt-3">
+                                <small class="text-primary">
+                                    <i class="fas fa-ruler-combined me-1"></i> Precision Work
+                                    <i class="fas fa-gem ms-3 me-1"></i> Premium Materials
+                                </small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="400">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
+                    
+                    <!-- Painting -->
+                    <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-paint-roller" aria-hidden="true"></i></div>
                             <h3>Painting</h3>
-                            <p>Interior and exterior painting that protects surfaces and delivers a refined final look.
-                            </p>
+                            <p>Interior and exterior painting services that protect surfaces, provide lasting durability, and deliver a refined, professional final look.</p>
                             <div class="service-overlay"></div>
+                            <div class="mt-3">
+                                <small class="text-primary">
+                                    <i class="fas fa-palette me-1"></i> Color Consultation
+                                    <i class="fas fa-shield-alt ms-3 me-1"></i> Weather Resistant
+                                </small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="500">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    
+                    <!-- Maintenance -->
+                    <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
                             <h3>Maintenance</h3>
-                            <p>Preventive care, repairs, and fast support to keep your systems running reliably.</p>
+                            <p>Preventive care programs, emergency repairs, and fast response support to keep your electrical and plumbing systems running reliably.</p>
                             <div class="service-overlay"></div>
+                            <div class="mt-3">
+                                <small class="text-primary">
+                                    <i class="fas fa-calendar-alt me-1"></i> Scheduled Plans
+                                    <i class="fas fa-bolt ms-3 me-1"></i> Quick Response
+                                </small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="600">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-cubes"></i></div>
+                    
+                    <!-- Gypsum Board -->
+                    <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-cubes" aria-hidden="true"></i></div>
                             <h3>Gypsum Board Works</h3>
-                            <p>Ceilings and partitions installed with careful alignment and a smooth, finished look.</p>
+                            <p>Professional ceiling installations and partition walls with careful alignment, smooth finishes, and modern design options for any space.</p>
                             <div class="service-overlay"></div>
+                            <div class="mt-3">
+                                <small class="text-primary">
+                                    <i class="fas fa-border-all me-1"></i> Custom Designs
+                                    <i class="fas fa-fire-extinguisher ms-3 me-1"></i> Fire Resistant
+                                </small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mx-auto" data-aos="flip-left" data-aos-delay="700">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-industry"></i></div>
+                    
+                    <!-- Fabrication & Aluminum -->
+                    <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="700">
+                        <div class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-industry" aria-hidden="true"></i></div>
                             <h3>Fabrication & Aluminum</h3>
-                            <p>Metal fabrication, aluminum frames, doors, windows, and structural fittings made to last.
-                            </p>
+                            <p>Custom metal fabrication, aluminum frames, doors, windows, gates, and structural fittings made to last with precise engineering.</p>
                             <div class="service-overlay"></div>
+                            <div class="mt-3">
+                                <small class="text-primary">
+                                    <i class="fas fa-cog me-1"></i> Custom Orders
+                                    <i class="fas fa-wrench ms-3 me-1"></i> Durable Materials
+                                </small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="800">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-snowflake"></i></div>
+                    
+                    <!-- AC Works -->
+                    <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="800">
+                        <div class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-snowflake" aria-hidden="true"></i></div>
                             <h3>AC Works</h3>
-                            <p>Air conditioning installation, maintenance, and repair services for optimal climate
-                                control and comfort.</p>
+                            <p>Air conditioning installation, maintenance, repair, and cleaning services for optimal climate control and indoor comfort year-round.</p>
                             <div class="service-overlay"></div>
+                            <div class="mt-3">
+                                <small class="text-primary">
+                                    <i class="fas fa-temperature-low me-1"></i> Energy Efficient
+                                    <i class="fas fa-filter ms-3 me-1"></i> Filter Cleaning
+                                </small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="900">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-camera"></i></div>
+                    
+                    <!-- Camera Work -->
+                    <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="900">
+                        <div class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-camera" aria-hidden="true"></i></div>
                             <h3>Camera Work</h3>
-                            <p>Professional site documentation, surveillance systems, and video monitoring for security
-                                and project tracking.</p>
+                            <p>Professional site documentation, CCTV surveillance systems installation, video monitoring for security, and project progress tracking.</p>
                             <div class="service-overlay"></div>
+                            <div class="mt-3">
+                                <small class="text-primary">
+                                    <i class="fas fa-shield-virus me-1"></i> 24/7 Monitoring
+                                    <i class="fas fa-mobile-alt ms-3 me-1"></i> Remote Access
+                                </small>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Why Choose Us Section -->
+                <div class="row g-4 mt-5" data-aos="fade-up">
+                    <div class="col-12">
+                        <div class="text-center mb-4">
+                            <h3 class="section-title">Why Choose Our Services?</h3>
+                            <p class="section-subtitle mx-auto">We deliver quality, reliability, and value with every project</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stats-card text-center">
+                            <i class="fas fa-certificate stats-icon"></i>
+                            <div class="stats-number" data-count="100">0</div>
+                            <div class="stats-label">Quality Guarantee</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stats-card text-center">
+                            <i class="fas fa-clock stats-icon"></i>
+                            <div class="stats-number" data-count="24">0</div>
+                            <div class="stats-label">Hour Response</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stats-card text-center">
+                            <i class="fas fa-wallet stats-icon"></i>
+                            <div class="stats-number" data-count="100">0</div>
+                            <div class="stats-label">Fair Pricing</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stats-card text-center">
+                            <i class="fas fa-users stats-icon"></i>
+                            <div class="stats-number" data-count="1000">0</div>
+                            <div class="stats-label">Happy Customers</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Packages -->
+                <div class="mt-5" data-aos="fade-up">
+                    <div class="text-center mb-4">
+                        <h3 class="section-title">Service Packages</h3>
+                        <p class="section-subtitle mx-auto">Choose the package that fits your needs</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="why-card text-center h-100">
+                                <div class="why-icon"><i class="fas fa-home"></i></div>
+                                <h3>Basic Package</h3>
+                                <p class="text-primary fs-2 fw-bold">From 500k</p>
+                                <ul class="list-unstyled text-start mt-3">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Electrical Inspection</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Basic Plumbing Check</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Maintenance Service</li>
+                                    <li><i class="fas fa-times text-muted me-2"></i> Solar Installation</li>
+                                </ul>
+                                <button class="btn btn-outline-light mt-3 open-booking">Get Quote</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="why-card text-center h-100" style="border-color: var(--primary);">
+                                <div class="why-icon"><i class="fas fa-building"></i></div>
+                                <h3>Standard Package</h3>
+                                <p class="text-primary fs-2 fw-bold">From 1.5M</p>
+                                <ul class="list-unstyled text-start mt-3">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Full Electrical Setup</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Complete Plumbing</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Tiling & Painting</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Gypsum Ceiling</li>
+                                </ul>
+                                <button class="btn btn-primary mt-3 open-booking">Get Quote</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="why-card text-center h-100">
+                                <div class="why-icon"><i class="fas fa-crown"></i></div>
+                                <h3>Premium Package</h3>
+                                <p class="text-primary fs-2 fw-bold">From 3M</p>
+                                <ul class="list-unstyled text-start mt-3">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Solar System</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> AC Installation</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> CCTV Setup</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Aluminum Fabrication</li>
+                                </ul>
+                                <button class="btn btn-outline-light mt-3 open-booking">Get Quote</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
                 <div class="text-center mt-5" data-aos="fade-up">
-                    <button type="button" class="btn btn-primary btn-lg open-booking"><i
-                            class="fas fa-calendar-check me-2"></i>Book a Consultation</button>
+                    <div class="bg-gradient p-5 rounded-4">
+                        <h3 class="mb-3">Need a Custom Solution?</h3>
+                        <p class="mb-4">Contact us for tailored engineering services that match your specific requirements and budget.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <button type="button" class="btn btn-primary btn-lg open-booking">
+                                <i class="fas fa-calendar-check me-2" aria-hidden="true"></i>Book a Consultation
+                            </button>
+                            <a href="contact.html" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-envelope me-2" aria-hidden="true"></i>Contact Us
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <div class="footer-brand"><i class="fas fa-bolt"></i><span>GREENEST PF</span></div>
-                    <p class="mt-3">Premium engineering services with a commitment to excellence and innovation.</p>
+                <div class="col-lg-5 col-md-12">
+                    <div class="footer-brand"><i class="fas fa-bolt" aria-hidden="true"></i><span>GREENEST PF</span></div>
+                    <p class="mt-3">Premium engineering services with a commitment to excellence and innovation in Kampala, Uganda.</p>
                     <div class="social-links mt-4">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-4 col-6">
                     <h4>Quick Links</h4>
                     <ul class="footer-links list-unstyled">
                         <li><a href="index.html">Home</a></li>
@@ -181,7 +416,7 @@
                         <li><a href="portfolio.html">Portfolio</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-4 col-6">
                     <h4>Support</h4>
                     <ul class="footer-links list-unstyled">
                         <li><a href="contact.html">Contact</a></li>
@@ -190,48 +425,60 @@
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 col-md-4">
                     <h4>Working Hours</h4>
                     <ul class="footer-links list-unstyled">
-                        <li><i class="far fa-clock me-2"></i> Mon-Fri: 8:00 - 18:00</li>
-                        <li><i class="far fa-clock me-2"></i> Saturday: 9:00 - 15:00</li>
-                        <li><i class="fas fa-phone-alt me-2"></i> Emergency: 24/7</li>
+                        <li><i class="far fa-clock me-2" aria-hidden="true"></i> Mon-Fri: 8:00 - 18:00</li>
+                        <li><i class="far fa-clock me-2" aria-hidden="true"></i> Saturday: 9:00 - 15:00</li>
+                        <li><i class="fas fa-phone-alt me-2" aria-hidden="true"></i> Emergency: 24/7</li>
                     </ul>
+                    <div class="mt-3">
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i> Kampala, Uganda</p>
+                        <p><i class="fas fa-envelope me-2"></i> raweko@greenestpft.com</p>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom text-center mt-5 pt-4">
                 <p>&copy; 2026 GREENEST PF Engineering Services Ltd. All rights reserved.</p>
-                <p class="mt-2">Built with by <a href="https://kndjoshua.github.io/KnD/">KnDjoshua</a> in Kampala,
-                    Uganda</p>
+                <p class="mt-2">Built with <i class="fas fa-heart text-danger"></i> by <a href="https://kndjoshua.github.io/KnD/" target="_blank" rel="noopener noreferrer">KnDjoshua</a> in Kampala, Uganda</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/256783756775" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/256783756775" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
         <span class="whatsapp-tooltip">Chat with us</span>
     </a>
 
-    <div class="booking-modal" id="bookingModal" aria-hidden="true">
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
         <div class="booking-modal-content">
-            <button type="button" class="modal-close close-booking"><i class="fas fa-times"></i></button>
+            <button type="button" class="modal-close close-booking" aria-label="Close modal">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
             <div class="modal-header">
-                <h3>Book a Consultation</h3>
+                <h3 id="modalTitle">Book a Consultation</h3>
                 <p>Send your booking request directly to raweko@greenestpft.com</p>
             </div>
             <form id="bookingForm" class="booking-form">
                 <div class="row g-3">
-                    <div class="col-md-6">
-                        <label for="bookingName" class="form-label">Full Name</label>
+                    <div class="col-md-6 col-12">
+                        <label for="bookingName" class="form-label">Full Name *</label>
                         <input type="text" id="bookingName" name="name" class="form-control" required>
                     </div>
-                    <div class="col-md-6">
-                        <label for="bookingEmail" class="form-label">Email Address</label>
+                    <div class="col-md-6 col-12">
+                        <label for="bookingEmail" class="form-label">Email Address *</label>
                         <input type="email" id="bookingEmail" name="email" class="form-control" required>
                     </div>
-                    <div class="col-md-6">
-                        <label for="bookingService" class="form-label">Service Needed</label>
+                    <div class="col-md-6 col-12">
+                        <label for="bookingPhone" class="form-label">Phone Number</label>
+                        <input type="tel" id="bookingPhone" name="phone" class="form-control">
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <label for="bookingService" class="form-label">Service Needed *</label>
                         <select id="bookingService" name="service" class="form-select" required>
+                            <option value="">Select a service</option>
                             <option value="Electrical Installation">Electrical Installation</option>
                             <option value="Solar & Efficiency Upgrade">Solar & Efficiency Upgrade</option>
                             <option value="Plumbing">Plumbing</option>
@@ -239,16 +486,18 @@
                             <option value="Maintenance">Maintenance</option>
                             <option value="Gypsum Board Works">Gypsum Board Works</option>
                             <option value="Fabrication & Aluminum">Fabrication & Aluminum</option>
+                            <option value="AC Works">AC Works</option>
+                            <option value="Camera Work">Camera Work</option>
                         </select>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-12">
                         <label for="bookingDate" class="form-label">Preferred Date</label>
                         <input type="date" id="bookingDate" name="date" class="form-control">
                     </div>
                     <div class="col-12">
                         <label for="bookingMessage" class="form-label">Project Details</label>
                         <textarea id="bookingMessage" name="message" class="form-control" rows="4"
-                            placeholder="Tell us briefly what you need"></textarea>
+                            placeholder="Tell us briefly about your project requirements"></textarea>
                     </div>
                 </div>
                 <div class="text-end mt-4">
@@ -258,9 +507,18 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="script.js" defer></script>
+    
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
 
 </html>
