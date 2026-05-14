@@ -229,7 +229,7 @@ if (bookingForm) {
         const body = encodeURIComponent(
             'Name: ' + name + '\nEmail: ' + email + '\nService: ' + service + '\nPreferred date: ' + date + '\n\nDetails:\n' + message
         );
-        window.location.href = 'mailto:raweko@greenestpft.com?subject=' + subject + '&body=' + body;
+        window.location.href = 'mailto:greenestpf@gmail.com?subject=' + subject + '&body=' + body;
         closeBookingModal();
         bookingForm.reset();
 
